@@ -17,14 +17,9 @@ Reference websites: https://adahopper.com/ http://abigail.glass/ https://noviefo
 
 My website shouldn't be substantially different in terms of layout or flow from these examples. It should be artfully interwoven with high-quality pictures that match the color schema and seemlessly work on mobile or on laptop browser. 
 
-Sections in order:
-1. Hero
-   - Name
-   - photo
-   - enter if you dare (legal, over 18 check, but make it fun)
-
+Sections in order
 ### About (/about)
-- Short sentence quip
+- Tagline tbd
 - long bio
 - “What I’m into” (bullets)
 - Photo
@@ -70,9 +65,11 @@ Some paragraph setting expectations or letting ppl know what I want
 Typeform integration
 -will contain screening questions
 
-### Bottom thingy
+### Footer
 email collection form for newsletter on whereabouts, new pictures, and writing
 button for twitter, substack
+x.com/taliagracesable
+taliasable.substack.com
 
 ### Reference
 For reference, this is my old site. I want to change it. 
@@ -215,9 +212,9 @@ Top nav: About, Rates, Experiences, Ettiquite, Contact
   - Small: metadata
 
   ### Color tokens (v0.1)
-- Background: peach or ecru
+- Background: light peach or ecru
 - Text: near-black
-- Accent: one muted color for links/buttons
+- Accent: warm bronze for links/buttons
 - Borders: dark purple
 
 ### Layout rules
@@ -254,7 +251,6 @@ Phase 1: Layout shell
 - Global layout, nav, footer, basic styles/tokens
 
 Phase 2: Pages
-- Home
 - About, Rates, Experiences, Ettiquette, Contact (static content)
 
 Phase 3: Content collections
