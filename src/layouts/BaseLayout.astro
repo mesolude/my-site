@@ -14,7 +14,7 @@ const {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/taliasable.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
@@ -79,13 +79,15 @@ const {
 
   :root {
     /* Color tokens - Luxurious Dark Theme */
-    --color-bg: #4a2545; /* deep aubergine/purple */
+    --color-bg: #433047; /* muted purple - between bright and dark */
+    --color-bg-alt: #38283d; /* slightly darker purple */
     --color-text: #f4e8d8; /* warm cream */
     --color-accent: #d4af37; /* rich gold */
     --color-accent-hover: #f0c85a; /* lighter gold */
     --color-border: #d4af37; /* gold border */
 
     /* Layout */
+    --nav-height: 90px;
     --max-content-width: 1200px;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
@@ -100,10 +102,38 @@ const {
 
   body {
     font-family: 'Vollkorn', 'Bitter', Georgia, serif;
-    background-color: var(--color-bg);
+    background-color: var(--color-bg-alt);
     color: var(--color-text);
     line-height: 1.7;
     position: relative;
+  }
+
+  main {
+    background-color: var(--color-bg);
+    min-height: 100vh;
+    padding-top: var(--nav-height);
+  }
+
+  /* Hero sections - global styles */
+  .hero {
+    width: 100%;
+    min-height: 700px;
+    max-height: 95vh;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
   }
 
   /* Ornamental Corners */
@@ -137,7 +167,9 @@ const {
   .site-nav {
     background-color: var(--color-bg);
     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 0.75rem 0;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -153,16 +185,13 @@ const {
   .nav-content {
     max-width: var(--max-content-width);
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 1rem var(--spacing-md) 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  main {
-    padding-top: 120px;
+    gap: 0;
+    height: 100%;
   }
 
   .nav-brand {
@@ -264,12 +293,17 @@ const {
   }
 
   a {
-    color: var(--color-accent);
+    color: var(--color-accent) !important;
     transition: color 0.3s;
   }
 
+  a:link,
+  a:visited {
+    color: var(--color-accent) !important;
+  }
+
   a:hover {
-    color: var(--color-accent-hover);
+    color: var(--color-accent-hover) !important;
   }
 
   a:focus {

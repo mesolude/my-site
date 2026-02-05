@@ -4,12 +4,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Rates - Talia Sable" description="Rates and availability">
   <div class="hero">
-    <img src="/DSCF9337-ed-sm.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
+    <img src="/header-cello.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
   </div>
 
   <article class="rates">
     <h1>Rates</h1>
 
+    <div class="rates-with-image">
+      <div class="rates-content">
         <section class="rates-standard">
       <div class="rate-tier">
         <h2>One Hour: $3,000</h2>
@@ -64,8 +66,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>An actual getaway. Hot springs in Iceland, beaches in Bali, or exploring a city neither of us has seen. Adventure, rest, and the delicious intimacy that comes from extended time together.</p>
       </div>
     </section>
+      </div>
 
-        <section class="rates-notes">
+      <div class="rates-image">
+        <img src="/body-lookback.jpg" alt="Talia Sable" />
+      </div>
+    </div>
+
+    <section class="rates-notes">
           <h2>Notes</h2>
           <ul>
             <li>If we haven't met before, a paid video call is required before an extended retreat</li>
@@ -74,6 +82,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </ul>
         </section>
   </article>
+
+  <div class="footer-image">
+    <img src="/lilies-header.jpg" alt="Talia Sable" />
+  </div>
 </BaseLayout>
 
 <style>
@@ -102,6 +114,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .rates h1 {
     margin-bottom: 2rem;
     text-align: center;
+  }
+
+  .rates-with-image {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 2rem;
+  }
+
+  .rates-image {
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+    border-radius: 4px;
+    border: 2px solid var(--color-border);
+    overflow: hidden;
+  }
+
+  .rates-image img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .rates-standard,
@@ -186,15 +220,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: bold;
   }
 
+  .footer-image {
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+  }
+
+  .footer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
   @media (max-width: 768px) {
-    .rates-container {
+    .rates {
+      padding: 2rem 1.5rem;
+    }
+
+    .rates-with-image {
       grid-template-columns: 1fr;
       gap: 1rem;
     }
 
     .rates-image {
       position: static;
-      max-width: 100%;
     }
 
     .rate-tier h2,

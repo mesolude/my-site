@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Etiquette - Talia Sable" description="Booking etiquette and guidelines">
   <div class="hero">
-    <img src="/DSCF9397-ed-sm.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
+    <img src="/header-business.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
   </div>
 
   <article class="etiquette">
@@ -46,6 +46,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </section>
       </div>
   </article>
+
+  <div class="footer-image">
+    <img src="/header-royalton.jpg" alt="Talia Sable" />
+  </div>
 </BaseLayout>
 
 <style>
@@ -125,6 +129,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .gifts strong {
     color: var(--color-accent);
+  }
+
+  .gifts a {
+    color: var(--color-accent) !important;
+    text-decoration: underline;
+  }
+
+  .gifts a:hover {
+    color: var(--color-accent-hover) !important;
+  }
+
+  .footer-image {
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+  }
+
+  .footer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
   }
 
   @media (max-width: 768px) {
