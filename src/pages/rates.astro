@@ -3,6 +3,207 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Rates - Talia Sable" description="Rates and availability">
-  <h1>Rates</h1>
-  <p>Content coming soon.</p>
+  <div class="hero">
+    <img src="/DSCF9337-ed-sm.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
+  </div>
+
+  <article class="rates">
+    <h1>Rates</h1>
+
+        <section class="rates-standard">
+      <div class="rate-tier">
+        <h2>One Hour: $3,000</h2>
+        <p>A concentrated dose of connection. Perfect for when time is precious.</p>
+      </div>
+
+      <div class="rate-tier">
+        <h2>Two Hours: $3,800</h2>
+        <p>Time to relax into each other.</p>
+      </div>
+
+      <div class="rate-tier">
+        <h2>Three Hours: $4,400</h2>
+        <p>Drinks or a quick bite, then the main event. Enough to actually connect, not just rush through.</p>
+      </div>
+
+      <div class="rate-tier">
+        <h2>Four Hours: $5,000</h2>
+        <p>A proper dinner and time together after. The kind of evening where we're the last ones to leave the restaurant.</p>
+      </div>
+
+      <div class="rate-tier">
+        <h2>Six Hours: $6,500</h2>
+        <p>Dinner and a gallery. Or a show, drinks, and wherever the night takes us. Space to breathe.</p>
+      </div>
+
+      <div class="rate-tier incall">
+        <p class="note">Incall available: +$400</p>
+      </div>
+    </section>
+
+    <section class="rates-extended">
+      <h2>Extended Retreats</h2>
+
+      <div class="rate-tier">
+        <h3>Overnight (16 hours): $12,000</h3>
+        <p>An evening that doesn't end. Dinner, conversation, connection, and waking up together. Breakfast in bed optional but encouraged.</p>
+      </div>
+
+      <div class="rate-tier">
+        <h3>A Turn of the Earth (24 hours): $17,000</h3>
+        <p>A full day and night. We can be tourists in your city, escape to somewhere nearby, or stay in and pretend the outside world doesn't exist. A complete rotation, just us.</p>
+      </div>
+
+      <div class="rate-tier">
+        <h3>Complete Weekend (60 hours): $32,000</h3>
+        <p>Friday evening to Monday morning. A mini-vacation, a chance to actually relax together. The kind of time where inside jokes develop and comfort settles in.</p>
+      </div>
+
+      <div class="rate-tier">
+        <h3>Vacation (5 days): $55,000</h3>
+        <p>An actual getaway. Hot springs in Iceland, beaches in Bali, or exploring a city neither of us has seen. Adventure, rest, and the delicious intimacy that comes from extended time together.</p>
+      </div>
+    </section>
+
+        <section class="rates-notes">
+          <h2>Notes</h2>
+          <ul>
+            <li>If we haven't met before, a paid video call is required before an extended retreat</li>
+            <li>FMTY dates are an overnight minimum</li>
+            <li>In-date extensions are $1,500/hour</li>
+          </ul>
+        </section>
+  </article>
 </BaseLayout>
+
+<style>
+  .hero {
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .rates {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .rates h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .rates-standard,
+  .rates-extended {
+    margin-bottom: 1.5rem;
+  }
+
+  .rates-extended h2 {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .rate-tier {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .rate-tier:last-child {
+    border-bottom: none;
+  }
+
+  .rate-tier h2,
+  .rate-tier h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.25rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  .rate-tier h3 {
+    font-size: 1.2rem;
+  }
+
+  .rate-tier p {
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .incall {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .note {
+    font-style: italic;
+    color: var(--color-accent);
+  }
+
+  .rates-notes {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--color-accent);
+    margin-top: 2rem;
+  }
+
+  .rates-notes h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .rates-notes ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .rates-notes li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .rates-notes li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .rates-container {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .rates-image {
+      position: static;
+      max-width: 100%;
+    }
+
+    .rate-tier h2,
+    .rate-tier h3 {
+      font-size: 1.25rem;
+    }
+
+    .rates-notes {
+      padding: 1rem;
+    }
+  }
+</style>

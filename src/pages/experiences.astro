@@ -3,6 +3,212 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Experiences - Talia Sable" description="Date experiences and adventures">
-  <h1>Experiences</h1>
-  <p>Content coming soon.</p>
+  <div class="hero">
+    <img src="/DSCF8306-Edit-sm.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
+  </div>
+
+  <article class="experiences">
+    <h1>Experiences</h1>
+
+    <div class="experiences-content">
+        <section class="game-intro">
+          <h2>Let's Play</h2>
+          <p>I love novelty and unusual experiences. They're what make life interesting. This point system is my way of encouraging the kind of dates that excite me: trying something new, going somewhere beautiful, or doing something we'll both remember.</p>
+          <p>Rack up points by taking me on adventures. Collect enough and unlock a reward, like your next overnight at the 16-hour rate instead of the 24-hour cost.</p>
+        </section>
+
+        <section class="points-system">
+          <h2>How to Score Points</h2>
+
+          <div class="point-category">
+            <h3>Food & Drink</h3>
+            <ul>
+              <li>Michelin-starred restaurant: <strong>1 point per star</strong></li>
+            </ul>
+          </div>
+
+          <div class="point-category">
+            <h3>Travel & Adventure</h3>
+            <ul>
+              <li>Flying to a new country together: <strong>10 points</strong></li>
+              <li>Overnight train ride: <strong>8 points</strong></li>
+              <li>Hot springs in Iceland or fjords in Norway: <strong>15 points</strong></li>
+              <li>Weekend in Bali, Mexico City, or Japan: <strong>12 points</strong></li>
+            </ul>
+          </div>
+
+          <div class="point-category">
+            <h3>Culture & Fun</h3>
+            <ul>
+              <li>Runway show: <strong>10 points</strong></li>
+              <li>Strip club: <strong>4 points</strong></li>
+              <li>Gallery opening or museum: <strong>3 points</strong></li>
+              <li>City Museum in St. Louis: <strong>6 points</strong></li>
+            </ul>
+          </div>
+
+          <div class="point-category">
+            <h3>Unique Experiences</h3>
+            <ul>
+              <li>Mile high club in a private jet: <strong>20 points</strong></li>
+              <li>Milking a cow: <strong>5 points</strong></li>
+              <li>Shopping date (Issey Miyake, Miu Miu, Bottega): <strong>4 points</strong></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="rewards">
+          <h2>Rewards</h2>
+          <ul>
+            <li><strong>24 points:</strong> Your next 24-hour date at the 16-hour rate ($12k instead of $17k)</li>
+            <li><strong>40 points:</strong> Weekend getaway at overnight pricing ($12k/night instead of full weekend rate)</li>
+            <li><strong>60 points:</strong> Five-day vacation at weekend pricing</li>
+          </ul>
+        </section>
+
+        <section class="dream-dates">
+          <h2>Dream Dates</h2>
+          <p>I'm an ambivert: a cozy night in is as good as a night out. But if we're adventuring:</p>
+          <ul>
+            <li>Start at a chill bar with sour cocktails</li>
+            <li><strong>SF:</strong> Lazy Bear, Quince, Atelier Crenn</li>
+            <li><strong>NYC:</strong> Jungsik, Le Coucou, Carbone</li>
+            <li>Anywhere with great Vietnamese, Japanese, or Italian</li>
+            <li>Shopping: Issey Miyake, Cult Gaia, Miu Miu, L'Agence, Bottega Veneta</li>
+          </ul>
+        </section>
+      </div>
+  </article>
 </BaseLayout>
+
+<style>
+  .hero {
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .experiences {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .experiences h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .experiences-content {
+    width: 100%;
+  }
+
+  .game-intro,
+  .points-system,
+  .rewards,
+  .dream-dates {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .game-intro {
+    background-color: rgba(184, 134, 11, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-accent);
+  }
+
+  .game-intro h2 {
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .game-intro p {
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  section h2 {
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  section p {
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .point-category {
+    margin-bottom: 1rem;
+  }
+
+  .point-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .point-category h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    padding: 0.25rem 0;
+    line-height: 1.5;
+  }
+
+  li strong {
+    color: var(--color-accent);
+  }
+
+  .rewards {
+    background-color: rgba(74, 37, 69, 0.05);
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  .rewards ul {
+    margin-top: 0.5rem;
+  }
+
+  .rewards li {
+    padding: 0.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      height: 50vh;
+      min-height: 300px;
+    }
+
+    .experiences {
+      padding: 2rem 1.5rem;
+    }
+
+    section h2 {
+      font-size: 1.25rem;
+    }
+
+    .point-category h3 {
+      font-size: 1rem;
+    }
+  }
+</style>

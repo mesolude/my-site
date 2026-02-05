@@ -3,71 +3,75 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Talia Sable" description="Nerd, hippie, writer, ex-programmer, businesswoman">
+	<div class="hero">
+		<img src="/DSCF9203-ed-sm.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
+	</div>
+
 	<article class="about">
-		<header class="about-header">
-			<div class="about-image">
-				<img
-					src="/DSCF9203-ed-sm.jpg"
-					alt="Talia Sable"
-					loading="eager"
-				/>
-			</div>
-			<div class="about-intro">
-				<h1>An Introduction</h1>
-				<p class="tagline">When we talk about who we are, what we choose to say is revealing. It's never the whole picture. Here I do my best to feed you enough morsels of myself for you to decide:</p>
-				<p class="question">Walk away or come closer?</p>
-			</div>
-		</header>
+		<section class="intro-section">
+			<h1>An Introduction</h1>
+			<p class="tagline">When we talk about who we are, what we choose to say is revealing. It's never the whole picture. Here I do my best to feed you enough morsels of myself for you to decide:</p>
+			<p class="question">Walk away or come closer?</p>
+		</section>
 
 		<section class="bio">
 			<p>I'm a nerd, a hippie, a writer, an ex-programmer, a businesswoman. I chase growth and unusual experiences. I have social anxiety and a burning desire to connect.</p>
 			<p>This is my vague outline, the shadow on the wall. I look forward to revealing myself more fully.</p>
 		</section>
 
-		<section class="stats">
-			<h2>Stats</h2>
-			<ul>
-				<li>Ethnicity: Eurasian</li>
-				<li>Height: 5'1"</li>
-				<li>Bust: 32C</li>
-				<li>Waist: 27"</li>
-				<li>Weight: 105lbs</li>
-				<li>Hips: 37"</li>
-				<li>Shoe size: 37IT</li>
-			</ul>
-			<ul>
-				<li>Countries visited: 24</li>
-				<li>Myers-Briggs: INTJ</li>
-				<li>Enneagram: 4w3</li>
-			</ul>
-		</section>
+		<div class="content-with-photo">
+			<div class="stats-container">
+				<section class="stats">
+					<h2>Stats</h2>
+					<ul>
+						<li>Ethnicity: Eurasian</li>
+						<li>Height: 5'1"</li>
+						<li>Bust: 32C</li>
+						<li>Waist: 27"</li>
+						<li>Weight: 105lbs</li>
+						<li>Hips: 37"</li>
+						<li>Shoe size: 37IT</li>
+					</ul>
+					<ul>
+						<li>Countries visited: 24</li>
+						<li>Myers-Briggs: INTJ</li>
+						<li>Enneagram: 4w3</li>
+					</ul>
+				</section>
+			</div>
+			<div class="photo-insert">
+				<img src="/_D3A6732-cr-sm.jpg" alt="Talia Sable" />
+			</div>
+		</div>
 
 		<section class="facets">
 			<h2>The Sides of the Dice</h2>
 			<p class="section-intro">Facets of myself I bring to the table</p>
 
-			<div class="facet">
-				<h3>Empath: Compassion in presence</h3>
-				<p>I dive into the emotional deep end. Things can get weird down there, but it's cozy to cuddle and share intimately. I'm not afraid of intense or difficult emotions.</p>
-				<p class="examples">Massages and oxytocin. Silent eye contact. Authentic relating.</p>
-			</div>
+			<div class="facets-grid">
+				<div class="facet">
+					<h3>Empath: Compassion in presence</h3>
+					<p>I dive into the emotional deep end. Things can get weird down there, but it's cozy to cuddle and share intimately. I'm not afraid of intense or difficult emotions.</p>
+					<p class="examples">Massages and oxytocin. Silent eye contact. Authentic relating.</p>
+				</div>
 
-			<div class="facet">
-				<h3>Diogenes: Playfulness in intellect</h3>
-				<p>To put it gently, I'm a huge nerd. Let's investigate ideas with curiosity and goodnatured irreverence.</p>
-				<p class="examples">AI. Supply chains. DnD. How brains work. Ethics. Consciousness. Narratives and frames.</p>
-			</div>
+				<div class="facet">
+					<h3>Diogenes: Playfulness in intellect</h3>
+					<p>To put it gently, I'm a huge nerd. Let's investigate ideas with curiosity and goodnatured irreverence.</p>
+					<p class="examples">AI. Supply chains. DnD. How brains work. Ethics. Consciousness. Narratives and frames.</p>
+				</div>
 
-			<div class="facet">
-				<h3>Sensate: Bliss of the moment</h3>
-				<p>I'm "energetically sensitive," whatever that means. Small sensations—the electricity of a small touch—reach deep into my core.</p>
-				<p class="examples">Slow dances. Beauty in the mundane. Divine comedy. Plein air watercoloring.</p>
-			</div>
+				<div class="facet">
+					<h3>Sensate: Bliss of the moment</h3>
+					<p>I'm "energetically sensitive," whatever that means. Small sensations (the electricity of a small touch) reach deep into my core.</p>
+					<p class="examples">Slow dances. Beauty in the mundane. Divine comedy. Plein air watercoloring.</p>
+				</div>
 
-			<div class="facet">
-				<h3>Adventurer: Delight in the novel</h3>
-				<p>Ooh, novelty. The fear? That makes the growth more delicious. There's something very intimate about trying something for the first time with someone.</p>
-				<p class="examples">Challenges and becoming stronger. Climbing, BJJ, hitchhiking.</p>
+				<div class="facet">
+					<h3>Adventurer: Delight in the novel</h3>
+					<p>Ooh, novelty. The fear? That makes the growth more delicious. There's something very intimate about trying something for the first time with someone.</p>
+					<p class="examples">Challenges and becoming stronger. Climbing, BJJ, hitchhiking.</p>
+				</div>
 			</div>
 		</section>
 
@@ -78,130 +82,179 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-	.about {
-		max-width: 800px;
-		margin: 0 auto;
-	}
-
-	.about-header {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 3rem;
-		align-items: start;
-		margin-bottom: 3rem;
-	}
-
-	.about-image {
-		border-radius: 4px;
-		border: 2px solid var(--color-border);
+	.hero {
+		width: 100%;
+		height: 70vh;
+		min-height: 500px;
+		position: relative;
 		overflow: hidden;
 	}
 
-	.about-image img {
+	.hero-image {
 		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
 		display: block;
 	}
 
-	.about-intro h1 {
-		margin-bottom: 1rem;
+	.about {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 4rem 2rem;
+	}
+
+	.intro-section {
+		text-align: center;
+		margin-bottom: 4rem;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.intro-section h1 {
+		margin-bottom: 1.5rem;
 	}
 
 	.tagline {
-		font-size: 1rem;
-		line-height: 1.6;
-		margin-bottom: 1rem;
+		font-size: 1.1rem;
+		line-height: 1.8;
+		margin-bottom: 1.5rem;
+		opacity: 0.9;
 	}
 
 	.question {
 		font-style: italic;
 		color: var(--color-accent);
-		font-size: 1.125rem;
+		font-size: 1.3rem;
 	}
 
 	.bio {
-		margin-bottom: 3rem;
-		font-size: 1.125rem;
-		line-height: 1.7;
+		margin-bottom: 4rem;
+		font-size: 1.2rem;
+		line-height: 1.8;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.bio p {
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.content-with-photo {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		margin-bottom: 4rem;
+		align-items: start;
+	}
+
+	.photo-insert img {
+		width: 100%;
+		height: auto;
+		display: block;
 	}
 
 	.stats {
-		margin-bottom: 3rem;
+		background-color: rgba(0, 0, 0, 0.2);
+		padding: 2rem;
+		border-radius: 4px;
+		border-left: 3px solid var(--color-accent);
 	}
 
 	.stats h2 {
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
+		color: var(--color-accent);
 	}
 
 	.stats ul {
 		list-style: none;
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.stats ul:last-child {
+		margin-bottom: 0;
 	}
 
 	.stats li {
-		padding: 0.25rem 0;
+		padding: 0.4rem 0;
+		font-size: 1.05rem;
+		line-height: 1.6;
 	}
 
 	.facets {
-		margin-bottom: 3rem;
+		margin-bottom: 4rem;
 	}
 
 	.facets h2 {
 		margin-bottom: 0.5rem;
+		text-align: center;
 	}
 
 	.section-intro {
 		font-style: italic;
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 		color: var(--color-accent);
+		text-align: center;
+		font-size: 1.1rem;
+	}
+
+	.facets-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
 	}
 
 	.facet {
-		margin-bottom: 2rem;
-		padding-bottom: 2rem;
-		border-bottom: 1px solid var(--color-border);
-	}
-
-	.facet:last-child {
-		border-bottom: none;
+		padding: 1.5rem;
+		background-color: rgba(0, 0, 0, 0.2);
+		border-left: 3px solid var(--color-accent);
 	}
 
 	.facet h3 {
-		font-size: 1.25rem;
-		margin-bottom: 0.5rem;
-		color: var(--color-text);
+		font-size: 1.3rem;
+		margin-bottom: 1rem;
+		color: var(--color-accent);
 	}
 
 	.facet p {
-		margin-bottom: 0.5rem;
-		line-height: 1.6;
+		margin-bottom: 1rem;
+		line-height: 1.7;
 	}
 
 	.examples {
 		font-style: italic;
 		color: var(--color-accent);
 		font-size: 0.95rem;
+		opacity: 0.8;
 	}
 
 	.about-footer {
 		text-align: center;
-		padding-top: 2rem;
-		border-top: 1px solid var(--color-border);
+		padding-top: 3rem;
+		border-top: 1px solid rgba(212, 175, 55, 0.3);
+		margin-top: 4rem;
 	}
 
-	/* Mobile responsive */
 	@media (max-width: 768px) {
-		.about-header {
+		.hero {
+			height: 50vh;
+			min-height: 400px;
+		}
+
+		.about {
+			padding: 2rem 1.5rem;
+		}
+
+		.content-with-photo {
 			grid-template-columns: 1fr;
 			gap: 2rem;
 		}
 
-		.about-image {
-			order: -1;
+		.facets-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
 		}
 	}
 </style>

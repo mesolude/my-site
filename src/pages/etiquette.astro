@@ -3,6 +3,142 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Etiquette - Talia Sable" description="Booking etiquette and guidelines">
-  <h1>Etiquette</h1>
-  <p>Content coming soon.</p>
+  <div class="hero">
+    <img src="/DSCF9397-ed-sm.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
+  </div>
+
+  <article class="etiquette">
+    <h1>Etiquette</h1>
+
+    <div class="etiquette-content">
+        <section class="etiquette-section">
+          <h2>The Practicalities</h2>
+          <p>I require a deposit for all appointments (50% for visits longer than 4 hours). Deposits are non-refundable and can be paid via giftcards, PayPal, or cryptocurrency.</p>
+          <p>When we meet, tuck the rest in an unmarked envelope inside a book, or hand it to me discreetly if we're out.</p>
+        </section>
+
+        <section class="etiquette-section">
+          <h2>If Plans Change</h2>
+          <p>Life happens. If you need to reschedule, just let me know more than 48 hours before our date. No penalty.</p>
+          <p>Within 48 hours, I ask for 50% of the booking. Within 24 hours, 100%. Half can be applied to a rescheduled date within 4 weeks.</p>
+          <p>If you're feeling ill, please tell me as soon as possible so we can reschedule.</p>
+        </section>
+
+        <section class="etiquette-section">
+          <h2>Screening</h2>
+          <p>I require either your real-world information (full name, phone, employment) or two provider references from the past year. This stays private and secure.</p>
+        </section>
+
+        <section class="etiquette-section">
+          <h2>Boundaries</h2>
+          <p>I reserve the right to say no if I'm not enjoying myself. The upside? If I'm doing something with you, you know it's because I want to.</p>
+          <p>I'm best at playing myself. If you have a fantasy that requires me to be someone I'm not, I probably can't help. But roleplay as co-creation? That can be fun.</p>
+        </section>
+
+        <section class="etiquette-section gifts">
+          <h2>Gifts</h2>
+          <p>Never expected, always appreciated.</p>
+          <ul>
+            <li><strong>Gift cards:</strong> Article, Aman, Net-a-Porter</li>
+            <li><strong>Treasures:</strong> Gold jewelry, ancient Greek and Roman coins, anything alpaca wool</li>
+            <li><strong>My wishlist:</strong> <a href="#" target="_blank" rel="noopener">The things I'm coveting right now</a></li>
+          </ul>
+        </section>
+      </div>
+  </article>
 </BaseLayout>
+
+<style>
+  .hero {
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .etiquette {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .etiquette h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .etiquette-content {
+    width: 100%;
+  }
+
+  .etiquette-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .etiquette-section:last-child {
+    border-bottom: none;
+  }
+
+  .etiquette-section h2 {
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .etiquette-section p {
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .etiquette-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .gifts {
+    background-color: rgba(74, 37, 69, 0.05);
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+  }
+
+  .gifts ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.75rem;
+  }
+
+  .gifts li {
+    padding: 0.5rem 0;
+  }
+
+  .gifts strong {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      height: 50vh;
+      min-height: 300px;
+    }
+
+    .etiquette {
+      padding: 2rem 1.5rem;
+    }
+
+    .etiquette-section h2 {
+      font-size: 1.25rem;
+    }
+  }
+</style>
