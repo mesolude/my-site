@@ -24,7 +24,7 @@ const {
     <nav class="site-nav">
       <div class="nav-content">
         <a href="/" class="nav-brand">
-          Talia Sable
+          <img src="/taliasable-header.png" alt="Talia Sable" class="logo" />
         </a>
         <ul class="nav-links">
           <li><a href="/">About</a></li>
@@ -82,9 +82,10 @@ const {
     --color-bg: #433047; /* muted purple - between bright and dark */
     --color-bg-alt: #38283d; /* slightly darker purple */
     --color-text: #f4e8d8; /* warm cream */
-    --color-accent: #d4af37; /* rich gold */
-    --color-accent-hover: #f0c85a; /* lighter gold */
-    --color-border: #d4af37; /* gold border */
+    --peru: #ba8748; /* peru brown-orange */
+    --color-accent: #ba8748; /* peru */
+    --color-accent-hover: #d4a260; /* lighter peru */
+    --color-border: #ba8748; /* peru border */
 
     /* Layout */
     --nav-height: 90px;
@@ -190,22 +191,20 @@ const {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 0;
+    gap: 0.25rem;
     height: 100%;
   }
 
   .nav-brand {
     display: block;
-    font-family: 'Vollkorn', serif;
-    font-size: 2.5rem;
-    color: var(--color-accent);
     text-decoration: none;
-    font-weight: 400;
-    letter-spacing: 0.1em;
   }
 
-  .nav-brand:hover {
-    color: var(--color-accent-hover);
+  .nav-brand .logo {
+    height: 50px;
+    width: auto;
+    display: block;
+    margin-top: 1.25rem;
   }
 
   .nav-links {
@@ -215,7 +214,7 @@ const {
   }
 
   .nav-links a {
-    font-family: 'Bitter', serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     color: var(--color-accent);
     text-decoration: none;
     transition: color 0.3s;
