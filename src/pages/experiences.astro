@@ -3,10 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Experiences - Talia Sable" description="Date experiences and adventures">
-  <div class="hero">
-    <img src="/header-pink.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
-  </div>
-
   <article class="experiences">
     <h1>Experiences</h1>
 
@@ -14,27 +10,59 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <section class="game-intro">
           <h2>Let's Play</h2>
           <p>I love novelty and unusual experiences. They're what make life interesting. This point system is my way of encouraging the kind of dates that excite me: trying something new, going somewhere beautiful, or doing something we'll both remember.</p>
-          <p>Rack up points by taking me on adventures. Collect enough and unlock a reward, like your next overnight at the 16-hour rate instead of the 24-hour cost.</p>
+          <p>Rack up points by taking me on adventures. Collect enough and unlock a reward.</p>
         </section>
 
         <div class="points-with-image">
           <section class="points-system">
             <h2>How to Score Points</h2>
 
+            <p class="points-baseline">+1 point per date (only if no other qualifying points event)</p>
+
             <div class="point-category">
             <h3>Food & Drink</h3>
             <ul>
               <li>Michelin-starred restaurant: <strong>1 point per star</strong></li>
             </ul>
+
+            <details class="city-restaurants">
+              <summary>Los Angeles</summary>
+              <ul>
+                <li>Vespertine: <strong>4 points</strong></li>
+              </ul>
+            </details>
+
+            <details class="city-restaurants">
+              <summary>Bay Area</summary>
+              <ul>
+                <li>Ju-ni, Kusakabe, or Omakase: <strong>3 points</strong></li>
+                <li>Lazy Bear: <strong>4 points</strong></li>
+                <li>Atelier Crenn: <strong>5 points</strong></li>
+                <li>Quince: <strong>5 points</strong></li>
+                <li>French Laundry: <strong>5 points</strong></li>
+                <li>SingleThread Farm: <strong>5 points</strong></li>
+              </ul>
+            </details>
+
+            <details class="city-restaurants">
+              <summary>New York City</summary>
+              <ul>
+                <li>Le Coucou: <strong>3 points</strong></li>
+                <li>Masa, Joji, or Noz: <strong>4 points</strong></li>
+                <li>Jungsik: <strong>5 points</strong></li>
+                <li>Per Se: <strong>5 points</strong></li>
+              </ul>
+            </details>
           </div>
 
           <div class="point-category">
             <h3>Travel & Adventure</h3>
             <ul>
-              <li>Flying to a new country together: <strong>10 points</strong></li>
-              <li>Overnight train ride: <strong>8 points</strong></li>
+              <li>Overnight on the Orient Express: <strong>12 points</strong></li>
+              <li>Dog sledding: <strong>8 points</strong></li>
               <li>Hot springs in Iceland or fjords in Norway: <strong>15 points</strong></li>
-              <li>Weekend in Bali, Mexico City, or Japan: <strong>12 points</strong></li>
+              <li>Visit a country I haven't been to: <strong>10 points</strong></li>
+              <li>See the aurora borealis: <strong>10 points</strong></li>
             </ul>
           </div>
 
@@ -42,20 +70,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h3>Culture & Fun</h3>
             <ul>
               <li>Runway show: <strong>10 points</strong></li>
+              <li>Art Basel: <strong>6 points</strong></li>
+              <li>British Museum: <strong>5 points</strong></li>
               <li>Strip club: <strong>4 points</strong></li>
-              <li>Gallery opening or museum: <strong>3 points</strong></li>
-              <li>City Museum in St. Louis: <strong>6 points</strong></li>
+              <li>Getty Center: <strong>3 points</strong></li>
+              <li>Met Cloisters: <strong>3 points</strong></li>
+              <li>City Museum in St. Louis: <strong>4 points</strong></li>
+              <li>Ballet, symphony, or show: <strong>2 points</strong></li>
+              <li>Gallery opening or museum I haven't been to: <strong>1 point</strong></li>
             </ul>
           </div>
 
           <div class="point-category">
             <h3>Unique Experiences</h3>
             <ul>
-              <li>Mile high club in a private jet: <strong>20 points</strong></li>
+              <li>Mile high club in a private jet: <strong>10 points</strong></li>
               <li>Milking a cow: <strong>5 points</strong></li>
-              <li>Shopping date (Issey Miyake, Miu Miu, Bottega): <strong>4 points</strong></li>
+              <li>Shopping date: <strong>4 points</strong></li>
+              <li>Trio date: <strong>3 points</strong></li>
             </ul>
           </div>
+
+          <p class="points-note">Note for optimizers: If an experience qualifies for multiple categories, you'll receive points only for the highest-value one. For example, hot springs in Iceland counts as both visiting a new country (10 points) and hot springs (15 points)—you'd get 15 points, not 25.</p>
           </section>
 
           <div class="points-image">
@@ -67,24 +103,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h2>Rewards</h2>
           <ul>
             <li><strong>24 points:</strong> Your next 24-hour date at the 16-hour rate ($12k instead of $17k)</li>
-            <li><strong>40 points:</strong> Weekend getaway at full day pricing ($17k/night instead of full weekend rate)</li>
+            <li><strong>40 points:</strong> Weekend getaway at 24-hour pricing</li>
             <li><strong>60 points:</strong> Five-day vacation at weekend pricing</li>
           </ul>
         </section>
 
-        <section class="dream-dates">
-          <h2>Dream Dates</h2>
-          <p>I'm an ambivert: a cozy night in is as good as a night out. But if we're adventuring:</p>
-          <ul>
-            <li>Start at a chill bar with sour cocktails</li>
-            <li><strong>SF:</strong> Lazy Bear, Quince, Atelier Crenn</li>
-            <li><strong>NYC:</strong> Jungsik, Le Coucou, Carbone</li>
-            <li>Anywhere with great Vietnamese, Japanese, or Italian</li>
-            <li>Shopping: Issey Miyake, Cult Gaia, Miu Miu, L'Agence, Bottega Veneta</li>
-          </ul>
-        </section>
       </div>
   </article>
+
+  <section class="photo-gallery">
+    <div class="gallery-grid">
+      <img src="/body-bluedress.jpg" alt="Talia Sable" />
+      <img src="/body-bluedress2.jpg" alt="Talia Sable" />
+      <img src="/body-lookback.jpg" alt="Talia Sable" />
+    </div>
+  </section>
 
   <div class="footer-image">
     <img src="/header-backyard.jpg" alt="Talia Sable" />
@@ -111,7 +144,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .experiences {
     max-width: 900px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 1.5rem 2rem 4rem;
   }
 
   .experiences h1 {
@@ -163,7 +196,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .points-with-image {
     display: grid;
-    grid-template-columns: 1fr 350px;
+    grid-template-columns: 1fr 450px;
     gap: 2rem;
     align-items: start;
     margin-bottom: 1.5rem;
@@ -211,6 +244,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-accent);
   }
 
+  .points-baseline {
+    font-size: 0.95rem;
+    font-style: italic;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    color: var(--color-accent);
+  }
+
+  .city-restaurants {
+    margin: 0.75rem 0;
+  }
+
+  .city-restaurants summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-accent);
+    padding: 0.5rem 0;
+    list-style: none;
+    user-select: none;
+  }
+
+  .city-restaurants summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .city-restaurants summary::before {
+    content: "▸ ";
+    display: inline-block;
+    transition: transform 0.2s;
+    margin-right: 0.5rem;
+  }
+
+  .city-restaurants[open] summary::before {
+    transform: rotate(90deg);
+  }
+
+  .city-restaurants ul {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+  }
+
+  .points-note {
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+  }
+
   .rewards {
     background-color: rgba(74, 37, 69, 0.05);
     padding: 1rem;
@@ -240,7 +322,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: block;
   }
 
+  .photo-gallery {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
   @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+      height: 400px;
+    }
     .hero {
       height: 50vh;
       min-height: 300px;

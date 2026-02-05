@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Talia Sable" description="Nerd, hippie, writer, ex-programmer, businesswoman">
 	<div class="hero">
-		<img src="/header-royalton.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
+		<img src="/lilies-header.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
 	</div>
 
 	<article class="about">
@@ -80,6 +80,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		</footer>
 	</article>
 
+	<section class="photo-gallery">
+		<div class="gallery-grid">
+			<img src="/body-facecloseup.jpg" alt="Talia Sable" />
+			<img src="/body-fountain.jpg" alt="Talia Sable" />
+			<img src="/body-reachingback.jpg" alt="Talia Sable" />
+		</div>
+	</section>
+
 	<div class="footer-image">
 		<img src="/header-reading.jpg" alt="Talia Sable" />
 	</div>
@@ -105,7 +113,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	.about {
 		max-width: 1000px;
 		margin: 0 auto;
-		padding: 4rem 2rem;
+		padding: 1.5rem 2rem 4rem;
 	}
 
 	.intro-section {
@@ -265,7 +273,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		display: block;
 	}
 
+	.photo-gallery {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0;
+	}
+
+	.gallery-grid img {
+		width: 100%;
+		height: 500px;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+
 	@media (max-width: 768px) {
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.gallery-grid img {
+			height: 400px;
+		}
 		.hero {
 			height: 50vh;
 			min-height: 400px;

@@ -3,10 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Rates - Talia Sable" description="Rates and availability">
-  <div class="hero">
-    <img src="/header-cello.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
-  </div>
-
   <article class="rates">
     <h1>Rates</h1>
 
@@ -83,9 +79,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </section>
   </article>
 
-  <div class="footer-image">
-    <img src="/lilies-header.jpg" alt="Talia Sable" />
-  </div>
+  <section class="photo-gallery">
+    <div class="gallery-grid">
+      <img src="/body-purpleunderwear.jpg" alt="Talia Sable" />
+      <img src="/body-lookupwards.jpg" alt="Talia Sable" />
+      <img src="/body-bluebathroom.jpg" alt="Talia Sable" />
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
@@ -108,7 +108,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .rates {
     max-width: 900px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 1.5rem 2rem 4rem;
   }
 
   .rates h1 {
@@ -118,7 +118,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .rates-with-image {
     display: grid;
-    grid-template-columns: 1fr 350px;
+    grid-template-columns: 1fr 450px;
     gap: 2rem;
     align-items: start;
     margin-bottom: 2rem;
@@ -220,22 +220,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: bold;
   }
 
-  .footer-image {
+  .photo-gallery {
     width: 100%;
-    height: 60vh;
-    min-height: 400px;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
   }
 
-  .footer-image img {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .gallery-grid img {
     width: 100%;
-    height: 100%;
+    height: 500px;
     object-fit: cover;
     object-position: center;
     display: block;
   }
 
   @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+      height: 400px;
+    }
     .rates {
       padding: 2rem 1.5rem;
     }
