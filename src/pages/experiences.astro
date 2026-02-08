@@ -17,7 +17,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <section class="points-system">
             <h2>How to Score Points</h2>
 
-            <p class="points-baseline">+1 point per date (only if no other qualifying points event)</p>
+            <p class="points-baseline">+1 point per date (freebie)</p>
 
             <div class="point-category">
             <h3>Food & Drink</h3>
@@ -85,13 +85,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h3>Unique Experiences</h3>
             <ul>
               <li>Mile high club in a private jet: <strong>10 points</strong></li>
-              <li>Milking a cow: <strong>5 points</strong></li>
+              <li>Milking a cow (<a href="https://www.sunsetviewcreamery.com/learn-to-milk-a-cow" target="_blank" rel="noopener">here?</a>): <strong>5 points</strong></li>
               <li>Shopping date: <strong>4 points</strong></li>
               <li>Trio date: <strong>3 points</strong></li>
             </ul>
           </div>
 
-          <p class="points-note">Note for optimizers: If an experience qualifies for multiple categories, you'll receive points only for the highest-value one. For example, hot springs in Iceland counts as both visiting a new country (10 points) and hot springs (15 points)—you'd get 15 points, not 25.</p>
+          <p class="points-note">Note for optimizers: If an experience qualifies for multiple categories, you'll receive points only for the highest-value one. For example, hot springs in Iceland counts as both visiting a new country (10 points) and hot springs (15 points), so you'd get 15 points, not 25.</p>
           </section>
 
           <div class="points-image">
@@ -113,9 +113,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="photo-gallery">
     <div class="gallery-grid">
-      <img src="/body-bluedress.jpg" alt="Talia Sable" />
-      <img src="/body-bluedress2.jpg" alt="Talia Sable" />
-      <img src="/body-lookback.jpg" alt="Talia Sable" />
+      <img src="/body-onepiece.jpg" alt="Talia Sable" />
+      <img src="/body-cr-reachingback.jpg" alt="Talia Sable" />
+      <img src="/body-opera.jpg" alt="Talia Sable" />
     </div>
   </section>
 
@@ -158,7 +158,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .game-intro,
   .points-system,
-  .rewards,
   .dream-dates {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
@@ -244,6 +243,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-accent);
   }
 
+  li a {
+    color: var(--color-accent) !important;
+    text-decoration: underline;
+  }
+
+  li a:hover {
+    color: var(--color-accent-hover) !important;
+  }
+
   .points-baseline {
     font-size: 0.95rem;
     font-style: italic;
@@ -294,9 +302,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .rewards {
-    background-color: rgba(74, 37, 69, 0.05);
-    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
     border-radius: 4px;
+    border-left: 3px solid var(--color-accent);
   }
 
   .rewards ul {
@@ -349,6 +358,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     .gallery-grid img {
       height: 400px;
+    }
+
+    .gallery-grid img:nth-child(2),
+    .gallery-grid img:nth-child(3) {
+      display: none;
     }
     .hero {
       height: 50vh;

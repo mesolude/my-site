@@ -19,7 +19,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <section class="etiquette-section">
           <h2>If Plans Change</h2>
-          <p>Life happens. If you need to reschedule, just let me know more than 48 hours before our date. No penalty.</p>
+          <p>There's no penalty if you need to reschedule more than 48 hours before our date.</p>
           <p>Within 48 hours, I ask for 50% of the booking. Within 24 hours, 100%. Half can be applied to a rescheduled date within 4 weeks.</p>
           <p>If you're feeling ill, please tell me as soon as possible so we can reschedule.</p>
         </section>
@@ -41,14 +41,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <ul>
             <li><strong>Gift cards:</strong> Article, Aman, Net-a-Porter</li>
             <li><strong>Treasures:</strong> Gold jewelry, ancient Greek and Roman coins, anything alpaca wool</li>
-            <li><strong>My wishlist:</strong> <a href="#" target="_blank" rel="noopener">The things I'm coveting right now</a></li>
+            <li><strong>My wishlist:</strong> <a href="https://www.luxylist.it/taliagracesable" target="_blank" rel="noopener">The things I'm coveting right now</a></li>
           </ul>
         </section>
       </div>
   </article>
 
   <div class="footer-image">
-    <img src="/header-royalton.jpg" alt="Talia Sable" />
+    <picture>
+      <source media="(max-width: 768px)" srcset="/body-opera.jpg" />
+      <img src="/header-royalton.jpg" alt="Talia Sable" />
+    </picture>
   </div>
 </BaseLayout>
 
@@ -111,10 +114,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .gifts {
-    background-color: rgba(74, 37, 69, 0.05);
-    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
     border-radius: 4px;
-    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
   }
 
   .gifts ul {

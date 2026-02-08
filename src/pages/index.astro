@@ -4,7 +4,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Talia Sable" description="Nerd, hippie, writer, ex-programmer, businesswoman">
 	<div class="hero">
-		<img src="/lilies-header.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
+		<picture>
+			<source media="(max-width: 768px)" srcset="/body-bluebathroom.jpg" />
+			<img src="/lilies-header.jpg" alt="Talia Sable" class="hero-image" loading="eager" />
+		</picture>
 	</div>
 
 	<article class="about">
