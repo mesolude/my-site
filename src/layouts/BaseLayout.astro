@@ -88,8 +88,8 @@ const {
     --color-border: #ba8748; /* peru border */
 
     /* Layout */
-    --nav-height: 90px;
-    --max-content-width: 1200px;
+    --nav-height: 100px;
+    --max-content-width: 1320px;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
@@ -99,6 +99,10 @@ const {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  html {
+    font-size: 110%;
   }
 
   body {
@@ -142,8 +146,8 @@ const {
   body::after {
     content: '';
     position: fixed;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1000;
@@ -186,7 +190,7 @@ const {
   .nav-content {
     max-width: var(--max-content-width);
     margin: 0 auto;
-    padding: 1rem var(--spacing-md) 1.5rem;
+    padding: 1rem var(--spacing-md) 1.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,7 +205,7 @@ const {
   }
 
   .nav-brand .logo {
-    height: 50px;
+    height: 55px;
     width: auto;
     display: block;
     margin-top: 1.25rem;
@@ -311,6 +315,10 @@ const {
   }
 
   @media (max-width: 768px) {
+    html {
+      font-size: 100%;
+    }
+
     body::before,
     body::after {
       display: none;
