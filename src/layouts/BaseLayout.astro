@@ -1,4 +1,6 @@
 ---
+import { inject } from '@vercel/analytics';
+
 interface Props {
   title?: string;
   description?: string;
@@ -8,6 +10,8 @@ const {
   title = 'Talia Sable',
   description = 'Talia Sable'
 } = Astro.props;
+
+inject();
 ---
 
 <!DOCTYPE html>
@@ -44,7 +48,7 @@ const {
       <div class="footer-content">
         <p>Connect with me:</p>
         <div class="footer-links">
-          <a href="https://x.com/taliagracesable" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://x.com/TaliaGraceSable" target="_blank" rel="noopener">Twitter</a>
           <a href="https://taliasable.substack.com" target="_blank" rel="noopener">Substack</a>
         </div>
       </div>
