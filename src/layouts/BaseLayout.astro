@@ -1,5 +1,5 @@
 ---
-import { inject } from '@vercel/analytics';
+import { Analytics } from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -10,8 +10,6 @@ const {
   title = 'Talia Sable',
   description = 'Talia Sable'
 } = Astro.props;
-
-inject();
 ---
 
 <!DOCTYPE html>
@@ -75,6 +73,7 @@ inject();
         lastScroll = currentScroll;
       });
     </script>
+    <Analytics />
   </body>
 </html>
 
