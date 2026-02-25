@@ -114,8 +114,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li><strong>24 points:</strong> Your next 24-hour date at the 16-hour rate ($12k instead of $17k)</li>
             <li><strong>40 points:</strong> Weekend getaway at 24-hour pricing</li>
             <li><strong>60 points:</strong> Five-day vacation at weekend pricing</li>
-            <li><strong>100 points:</strong> Earn something deeper than a mere discount. I'll also give you a singular talisman (definitely magical) to always remember me by.</li>
           </ul>
+          <p class="rewards-note">Note: If you don't earn any points in a year, your points balance resets.</p>
         </section>
 
       </div>
@@ -324,6 +324,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .rewards li {
     padding: 0.5rem 0;
+  }
+
+  .rewards-note {
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 1rem;
+    line-height: 1.6;
   }
 
   .footer-image {
