@@ -84,7 +84,9 @@ const {
 
     <script is:inline>
     (function () {
-      if (sessionStorage.getItem('preg_seen')) return;
+      var ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+      var lastSeen = parseInt(localStorage.getItem('preg_seen_at') || '0', 10);
+      if (lastSeen && Date.now() - lastSeen < ONE_WEEK_MS) return;
 
       // Reference: 12 weeks pregnant on July 1, 2026
       var refDate = new Date(2026, 6, 1); // local time, month is 0-indexed
@@ -113,7 +115,7 @@ const {
       function closePopup() {
         popup.style.display = 'none';
         document.body.style.overflow = '';
-        sessionStorage.setItem('preg_seen', '1');
+        localStorage.setItem('preg_seen_at', Date.now().toString());
       }
 
       document.getElementById('preg-close').addEventListener('click', closePopup);
