@@ -33,6 +33,7 @@ Make safe, incremental changes that are easy to review, test, and revert.
 - `npm run check` should pass (lint + build).
 - No new console errors in the browser.
 - No broken links in the nav (if touched).
+- Before pushing, do a grammatical double-check of any user-facing text that was modified (spelling, punctuation, hyphenation, subject-verb agreement, parallelism). Flag issues before pushing rather than after.
 
 ## Change budget (default)
 - Max 3 files touched per task.
