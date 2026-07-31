@@ -71,11 +71,187 @@ const {
         lastScroll = currentScroll;
       });
     </script>
+
+    <!-- Pregnancy Announcement Popup -->
+    <div id="preg-popup" role="dialog" aria-modal="true" aria-labelledby="preg-msg" tabindex="-1">
+      <div id="preg-backdrop"></div>
+      <div id="preg-content">
+        <div id="preg-silhouette" aria-hidden="true"></div>
+        <p id="preg-msg">Big news! I am <strong id="preg-weeks">—</strong> weeks pregnant.</p>
+        <p id="preg-available">Yes, I'm still available!</p>
+        <p id="preg-registry"><a href="https://my.babylist.com/vwqbkrent" target="_blank" rel="noopener">View my baby registry</a></p>
+        <button id="preg-close">Understood, mama</button>
+      </div>
+    </div>
+
+    <script is:inline>
+    (function () {
+      if (sessionStorage.getItem('preg_seen')) return;
+
+      var now = new Date();
+      var MATERNITY_START = new Date(2027, 0, 1);  // Jan 1, 2027
+      var MATERNITY_END = new Date(2027, 2, 15);   // March 15, 2027
+
+      // After March 15, 2027: no popup at all.
+      if (now >= MATERNITY_END) return;
+
+      if (now >= MATERNITY_START) {
+        // Maternity leave mode
+        document.getElementById('preg-silhouette').style.display = 'none';
+        document.getElementById('preg-msg').textContent = "I am on maternity leave.";
+        document.getElementById('preg-available').style.display = 'none';
+      } else {
+        // Pregnancy mode. Due date: Jan 6, 2027. LMP = 280 days earlier = April 1, 2026.
+        var lmpDate = new Date(2026, 3, 1);
+        var weeks = Math.min(42, Math.max(1, Math.floor((now - lmpDate) / 86400000 / 7)));
+
+        document.getElementById('preg-weeks').textContent = weeks;
+
+        // Map weeks → pregnancy month for image lookup. Months we have: 4–8.
+        var month;
+        if (weeks <= 17) month = 4;
+        else if (weeks <= 21) month = 5;
+        else if (weeks <= 26) month = 6;
+        else if (weeks <= 34) month = 7;
+        else month = 8;
+
+        document.getElementById('preg-silhouette').innerHTML =
+          '<img src="/silhouettes/month-' + month + '.svg" alt=""'
+          + ' style="height:200px;width:auto;display:block;margin:0 auto -0.5rem;">';
+      }
+
+      var popup = document.getElementById('preg-popup');
+      popup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+
+      function closePopup() {
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+        sessionStorage.setItem('preg_seen', '1');
+      }
+
+      document.getElementById('preg-close').addEventListener('click', closePopup);
+      document.getElementById('preg-backdrop').addEventListener('click', closePopup);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closePopup();
+      });
+
+      popup.focus();
+    })();
+    </script>
   </body>
 </html>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;1,400;1,700&family=Bitter:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+  /* Pregnancy Announcement Popup */
+  #preg-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #preg-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+  }
+
+  #preg-content {
+    position: relative;
+    z-index: 1;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    padding: 1rem 1.25rem 1.25rem;
+    max-width: 300px;
+    width: calc(100% - 1.5rem);
+    text-align: center;
+    color: var(--color-accent);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(186, 135, 72, 0.15);
+    outline: none;
+  }
+
+  #preg-popup:focus {
+    outline: none;
+  }
+
+  #preg-silhouette img {
+    height: 150px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #preg-msg {
+    font-size: 1.1rem;
+    color: var(--color-text) !important;
+    margin: 0.5rem 0 1rem;
+    line-height: 1.5;
+  }
+
+  #preg-msg strong {
+    color: var(--color-accent) !important;
+    font-size: 1.4em;
+    font-weight: 400;
+    vertical-align: -0.05em;
+  }
+
+  #preg-available {
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+    color: var(--color-accent) !important;
+  }
+
+  #preg-registry {
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+    color: var(--color-text) !important;
+  }
+
+  #preg-registry a {
+    color: var(--color-accent) !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  #preg-registry a:hover {
+    color: var(--color-accent-hover) !important;
+  }
+
+  #preg-close {
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 0.6rem 1.4rem;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: background 0.25s, color 0.25s;
+    width: 100%;
+  }
+
+  #preg-close:hover,
+  #preg-close:focus {
+    background: var(--color-accent);
+    color: var(--color-bg-alt);
+    outline: none;
+  }
+
+  @media (max-width: 480px) {
+    #preg-content {
+      padding: 1.25rem 1rem 1rem;
+      max-width: 280px;
+    }
+    #preg-msg {
+      font-size: 1rem;
+    }
+  }
 
   :root {
     /* Color tokens - Luxurious Dark Theme */
