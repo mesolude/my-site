@@ -78,6 +78,7 @@ const {
       <div id="preg-content">
         <div id="preg-silhouette" aria-hidden="true"></div>
         <p id="preg-msg">Big news! I am <strong id="preg-weeks">—</strong> weeks pregnant.</p>
+        <p id="preg-available">Yes, I'm still available!</p>
         <p id="preg-registry"><a href="https://my.babylist.com/vwqbkrent" target="_blank" rel="noopener">View my baby registry</a></p>
         <button id="preg-close">Understood, mama</button>
       </div>
@@ -85,29 +86,39 @@ const {
 
     <script is:inline>
     (function () {
-      var ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-      var lastSeen = parseInt(localStorage.getItem('preg_seen_at') || '0', 10);
-      if (lastSeen && Date.now() - lastSeen < ONE_WEEK_MS) return;
+      if (sessionStorage.getItem('preg_seen')) return;
 
-      // Reference: 12 weeks pregnant on July 1, 2026
-      var refDate = new Date(2026, 6, 1); // local time, month is 0-indexed
       var now = new Date();
-      var daysDiff = Math.floor((now - refDate) / 86400000);
-      var weeks = Math.min(42, Math.max(1, 12 + Math.floor(daysDiff / 7)));
+      var MATERNITY_START = new Date(2027, 0, 1);  // Jan 1, 2027
+      var MATERNITY_END = new Date(2027, 2, 15);   // March 15, 2027
 
-      document.getElementById('preg-weeks').textContent = weeks;
+      // After March 15, 2027: no popup at all.
+      if (now >= MATERNITY_END) return;
 
-      // Map weeks → pregnancy month for image lookup. Months we have: 4–8.
-      var month;
-      if (weeks <= 17) month = 4;
-      else if (weeks <= 21) month = 5;
-      else if (weeks <= 26) month = 6;
-      else if (weeks <= 34) month = 7;
-      else month = 8;
+      if (now >= MATERNITY_START) {
+        // Maternity leave mode
+        document.getElementById('preg-silhouette').style.display = 'none';
+        document.getElementById('preg-msg').textContent = "I am on maternity leave.";
+        document.getElementById('preg-available').style.display = 'none';
+      } else {
+        // Pregnancy mode. Due date: Jan 6, 2027. LMP = 280 days earlier = April 1, 2026.
+        var lmpDate = new Date(2026, 3, 1);
+        var weeks = Math.min(42, Math.max(1, Math.floor((now - lmpDate) / 86400000 / 7)));
 
-      document.getElementById('preg-silhouette').innerHTML =
-        '<img src="/silhouettes/month-' + month + '.svg" alt=""'
-        + ' style="height:200px;width:auto;display:block;margin:0 auto -0.5rem;">';
+        document.getElementById('preg-weeks').textContent = weeks;
+
+        // Map weeks → pregnancy month for image lookup. Months we have: 4–8.
+        var month;
+        if (weeks <= 17) month = 4;
+        else if (weeks <= 21) month = 5;
+        else if (weeks <= 26) month = 6;
+        else if (weeks <= 34) month = 7;
+        else month = 8;
+
+        document.getElementById('preg-silhouette').innerHTML =
+          '<img src="/silhouettes/month-' + month + '.svg" alt=""'
+          + ' style="height:200px;width:auto;display:block;margin:0 auto -0.5rem;">';
+      }
 
       var popup = document.getElementById('preg-popup');
       popup.style.display = 'flex';
@@ -116,7 +127,7 @@ const {
       function closePopup() {
         popup.style.display = 'none';
         document.body.style.overflow = '';
-        localStorage.setItem('preg_seen_at', Date.now().toString());
+        sessionStorage.setItem('preg_seen', '1');
       }
 
       document.getElementById('preg-close').addEventListener('click', closePopup);
@@ -187,6 +198,12 @@ const {
     font-size: 1.4em;
     font-weight: 400;
     vertical-align: -0.05em;
+  }
+
+  #preg-available {
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+    color: var(--color-accent) !important;
   }
 
   #preg-registry {
