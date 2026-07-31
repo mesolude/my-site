@@ -94,6 +94,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	<div class="footer-image">
 		<img src="/header-reading.jpg" alt="Talia Sable" />
 	</div>
+
+	<script type="application/ld+json" is:inline set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Talia Sable",
+		"url": "https://www.taliasable.com/",
+		"description": "Writer, escort, Stanford dropout, and online personality.",
+		"sameAs": [
+			"https://x.com/TaliaGraceSable",
+			"https://taliasable.substack.com/"
+		],
+		"subjectOf": [
+			{
+				"@type": "NewsArticle",
+				"headline": "The Nerdy Escorts Cashing In On Silicon Valley's AI Boom",
+				"url": "https://www.forbes.com/sites/annatong/2026/06/07/the-nerdy-escorts-cashing-in-on-silicon-valleys-ai-boom/"
+			},
+			{
+				"@type": "NewsArticle",
+				"headline": "Adult content creators on OnlyFans rely on more than subscriptions to make 6 figures",
+				"url": "https://www.businessinsider.com/onlyfans-tips-pay-per-view-media-extras-subscriptions-upsell-2020-10"
+			}
+		]
+	})} />
 </BaseLayout>
 
 <style>
