@@ -7,6 +7,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h1>Writing & Press</h1>
     <p>Talia Sable is a writer, former programmer, and online personality. She writes at <a href="https://taliasable.substack.com" target="_blank" rel="noopener">Talia Sable on Substack</a> and posts on X as <a href="https://x.com/TaliaGraceSable" target="_blank" rel="noopener">@TaliaGraceSable</a>. Her work and career have been covered by Forbes and Business Insider.</p>
   </article>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Talia Sable",
+    "url": "https://www.taliasable.com/",
+    "description": "Writer, former programmer, and online personality.",
+    "sameAs": [
+      "https://x.com/TaliaGraceSable",
+      "https://taliasable.substack.com/",
+      "https://www.forbes.com/sites/annatong/2026/06/07/the-nerdy-escorts-cashing-in-on-silicon-valleys-ai-boom/",
+      "https://www.businessinsider.com/onlyfans-tips-pay-per-view-media-extras-subscriptions-upsell-2020-10"
+    ],
+    "subjectOf": [
+      {
+        "@type": "NewsArticle",
+        "headline": "The Nerdy Escorts Cashing In On Silicon Valley's AI Boom",
+        "url": "https://www.forbes.com/sites/annatong/2026/06/07/the-nerdy-escorts-cashing-in-on-silicon-valleys-ai-boom/"
+      },
+      {
+        "@type": "NewsArticle",
+        "headline": "Adult content creators on OnlyFans rely on more than subscriptions to make 6 figures",
+        "url": "https://www.businessinsider.com/onlyfans-tips-pay-per-view-media-extras-subscriptions-upsell-2020-10"
+      }
+    ]
+  })} />
 </BaseLayout>
 
 <style>
